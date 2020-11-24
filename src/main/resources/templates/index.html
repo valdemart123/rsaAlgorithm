@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>RSA Шифровальщик</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">RSA Шифровальщик</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+
+    </nav>
+</div>
+<main role="main">
+    <section class="jumbotron text-center">
+        <p class="lead text-muted">Введите текст, который вы хотите зашифровать в поле ниже</p>
+<form action="#" th:action="@{/index}" th:object="${encoderRsa}" method="post">
+    <p>Введите P: <input type="text" th:field="*{p}" /></p>
+    <p>Введите Q: <input type="text" th:field="*{q}" /></p>
+    <textarea type="text" th:field="*{inputData}" placeholder="Введите текст для шифрования" class="form-control">
+    </textarea><br>
+    <p><input type="submit" value="Зашифровать" class="btn btn-success" /></p>
+</form>
+    </section>
+</main>
+</body>
+</html>
